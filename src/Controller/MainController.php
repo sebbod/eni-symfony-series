@@ -14,8 +14,9 @@ class MainController extends AbstractController
      */
     public function home()
     {
-        echo "coucou";
-        die();
+        //echo "coucou";
+        return $this->render('main/home.html.twig');
+        //die();
     }
 
     /**
@@ -23,7 +24,8 @@ class MainController extends AbstractController
      */
     public function test()
     {
-        echo "testounet";
-        die();
+        //echo "testounet";
+        //die();
+        return $this->render('main/test.gtml.twig');
     }
 }
