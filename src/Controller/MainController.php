@@ -26,6 +26,13 @@ class MainController extends AbstractController
     {
         //echo "testounet";
         //die();
-        return $this->render('main/test.gtml.twig');
+        $series = [
+            "title" => "Game of Thrones",
+            "year" => 2000,
+        ];
+        return $this->render('main/test.html.twig', [
+            "series" => $series,
+            "autreVariable" => "valeur"
+        ]);
     }
 }
