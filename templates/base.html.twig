@@ -14,6 +14,16 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <h1>Series!</h1>
+            {% include('inc/nav.html.twig') %}
+        </header>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            <div>&copy; {{ "now"|date("Y") }}</div>
+            {% include('inc/nav.html.twig') %}
+        </footer>
     </body>
 </html>

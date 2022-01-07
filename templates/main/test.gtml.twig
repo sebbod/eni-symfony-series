@@ -1,13 +1,34 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Series!</title>
-</head>
-<body>
+{%  extends 'base.html.twig' %}
+
+{%  block title %}{{ parent() }}{% endblock %}
+
+{%  block body %}
 <h1>testou</h1>
-</body>
-</html>
+    <div>
+        <div>{{ "now"|date('Y') }}</div>
+        <div>{{ "+1 year"|date('Y') }}</div>
+        {# commentaire #}
+        {%  set maVariable = "Sébastien" %}
+        <h2>Bonjour {{ maVariable|upper }}</h2>
+        {# test tableau #}
+        {% set colors = ["orange", "yellow", "red", "green"]%}
+        {%for color in colors %}
+            <div style="background-color:{{ color }}">[{{ loop.index }}]-{{ color }}</div>
+        {% endfor %}
+        <div>Tableau de {{ colors|length }} couleur(s)</div>
+        <div>Join sur une ligne {{ colors|join(', ') }}</div>
+
+        {# test object #}
+        {% set book = {
+            title: 'Pascal Brutal',
+            year: 2000,
+            author: "Riad Sattouf"}
+        %}
+        <h3>{{ book.author }}</h3>
+        <div>
+            {% for k, v in book %}
+            <div>{{ k }}:{{ v }}</div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
