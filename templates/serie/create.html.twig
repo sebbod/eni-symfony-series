@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block body %}
-
+    {{ form_start(serieFrm) }}
+    {{ form_errors(serieFrm) }}
+    {{ form_widget(serieFrm) }}
+    <button>Create</button>
+    {{ form_end(serieFrm) }}
 {% endblock %}
 
