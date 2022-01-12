@@ -17,7 +17,7 @@ class Sender
         $this->mailer = $mailer;
     }
 
-    public function sendNewUserNotificationToAdmin(UserInterface $user):void
+    public function sendNewUserNotificationToAdmin(User $user):void
     {
         // save mail to file \public\debug.txt
         //file_put_contents('debug.txt', $user->getEmail());
